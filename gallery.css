@@ -10,7 +10,7 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url(/back.jpg);
+  background-image: url(back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
