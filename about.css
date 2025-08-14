@@ -1,0 +1,198 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(/back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+header {
+  background: linear-gradient(90deg, orange, white, green);
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  color: #000;
+  font-size: 1.5rem;
+  animation: slideDown 1s ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: darkred;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: darkred;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  color: darkred;
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(90deg, orange, white, green);
+  border-radius: 10px;
+  margin: 1rem auto;
+  width: 75%;
+  max-width: 900px;
+  box-shadow: 0 4px 6px wheat;
+  animation: fadeIn 1.5s ease;
+}
+
+.profileHeading {
+  text-align: center;
+}
+
+.profileHeading .shiv {
+  font-size: 24px;
+  animation: fadeInLeft 1s ease;
+}
+
+.profileHeading .name {
+  color: dodgerblue;
+  font-weight: bold;
+  animation: fadeInRight 1s ease;
+}
+
+.web {
+  animation: fadeIn 1.5s ease;
+}
+
+/* Content sections */
+.content {
+  width: 80%;
+  max-width: 900px;
+  margin: 1rem auto;
+  flex: 1; /* Footer ke liye space maintain kare */
+}
+
+#center{
+  margin:10px;
+  border-radius:999px;
+  font-weight: bold;
+  color:black;
+  background: linear-gradient(90deg, orange, white, green);
+}
+
+.section {
+  background: linear-gradient(90deg, orange, white, green);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  animation: fadeIn 1.5s ease;
+}
+
+.section h3 {
+  margin-top: 0;
+  color: #1a73e8;
+}
+
+.section p {
+  margin: 0.5rem 0 0;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, orange, white, green);
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  animation: slideUp 1s ease;
+}
+
+/* Footer icons */
+.footer-img a i {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 5px;
+}
+
+.footer-img a {
+  text-decoration: none;
+}
+
+/* Keyframes for animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile {
+    width: 90%;
+  }
+}
